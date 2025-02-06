@@ -1,0 +1,28 @@
+{
+  "name": "phonebook-backend",
+  "version": "1.0.0",
+  "description": "Backend exercise code (part3) for the University of Helsinki Full Stack Open course.",
+  "homepage": "https://github.com/juusosar/FullStackOpen2025-backend#readme",
+  "bugs": {
+    "url": "https://github.com/juusosar/FullStackOpen2025-backend/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/juusosar/FullStackOpen2025-backend.git"
+  },
+  "author": "juusosar",
+  "main": "src/index.jsx",
+  "scripts": {
+    "start": "node src/index.jsx",
+    "dev": "nodemon src/index.jsx",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
+}
