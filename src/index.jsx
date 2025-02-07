@@ -4,10 +4,11 @@ const cors = require('cors')
 const app = express()
 app.use(express.json())
 app.use(cors())
+app.use(express.static('dist'))
 
 
 morgan.token('body', req => {
-    if (req.body === {}) req.body = null
+    if (req.body === "{}") req.body = null
     return JSON.stringify(req.body) || "no-content"
 })
 app.use(morgan(function (tokens, req, res) {

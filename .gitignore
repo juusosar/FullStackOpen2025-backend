@@ -1,5 +1,7 @@
 # Webstorm project files
 .idea
+package-lock.json
+*.rest
 
 # Logs
 logs
@@ -92,7 +94,6 @@ out
 
 # Nuxt.js build / generate output
 .nuxt
-dist
 
 # Gatsby files
 .cache/
