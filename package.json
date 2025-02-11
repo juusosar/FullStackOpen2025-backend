@@ -14,14 +14,16 @@
   "main": "src/index.jsx",
   "scripts": {
     "start": "node src/index.jsx",
-    "dev": "nodemon src/index.jsx",
+    "dev": "nodemon --inspect src/index.jsx",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build:ui": "rm -rf dist && cd ../frontend && npm run build && cp -r dist ../backend",
+    "build:ui": "rm -rf dist && cd ../part2/phonebook && npm run build && cp -r dist ../../FullStackOpen2025-backend",
     "deploy:full": "npm run build:ui && git add . && git commit -m uibuild && git push"
   },
   "dependencies": {
     "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
     "express": "^4.21.2",
+    "mongoose": "^8.10.0",
     "morgan": "^1.10.0"
   },
   "devDependencies": {
