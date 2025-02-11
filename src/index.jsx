@@ -10,8 +10,8 @@ app.use(cors())
 app.use(express.static('dist'))
 
 morgan.token('body', req => {
-    if (req.body === "{}") req.body = null
-    return JSON.stringify(req.body) || "no-content"
+    if (req.body === '{}') req.body = null
+    return JSON.stringify(req.body) || 'no-content'
 })
 app.use(morgan(function (tokens, req, res) {
     return [
@@ -55,10 +55,6 @@ app.post('/api/persons', (req, res, next) => {
         error: 'Missing number'
     })
 
- /*   if (person.find(person => person.name === newPerson.name)) return res.status(400).json({
-        error: 'Name already exists'
-    })
-*/
     const person = new Person({
         name: newPerson.name,
         number: newPerson.number,
@@ -68,7 +64,7 @@ app.post('/api/persons', (req, res, next) => {
 
     person.save()
         .then(addedPerson => {
-        res.json(addedPerson)
+            res.json(addedPerson)
         })
         .catch(err => next(err))
 })
@@ -79,7 +75,7 @@ app.put('/api/persons/:id', (req, res, next) => {
     Person.findByIdAndUpdate(
         req.params.id,
         { name, number },
-        { new: true, runValidators: true, context: 'query'}
+        { new: true, runValidators: true, context: 'query' }
     )
         .then((updatedPerson) => {
             res.json(updatedPerson)
@@ -89,7 +85,7 @@ app.put('/api/persons/:id', (req, res, next) => {
 
 app.delete('/api/persons/:id', (req, res, next) => {
     Person.findByIdAndDelete(req.params.id)
-        .then((person) => {
+        .then(() => {
             res.status(204).end()
         })
         .catch(err => next(err))
@@ -124,8 +120,8 @@ const errorHandler = (error, request, response, next) => {
     if (error.name === 'CastError') {
         return response.status(400).send({ error: 'malformatted id' })
     } else if (error.name === 'ValidationError') {
-    return response.status(400).json({ error: error.message })
-}
+        return response.status(400).json({ error: error.message })
+    }
 
     next(error)
 }
