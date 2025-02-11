@@ -16,6 +16,7 @@
     "start": "node src/index.jsx",
     "dev": "nodemon --inspect src/index.jsx",
     "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint .",
     "build:ui": "rm -rf dist && cd ../part2/phonebook && npm run build && cp -r dist ../../FullStackOpen2025-backend",
     "deploy:full": "npm run build:ui && git add . && git commit -m uibuild && git push"
   },
@@ -27,6 +28,10 @@
     "morgan": "^1.10.0"
   },
   "devDependencies": {
+    "@eslint/js": "^9.20.0",
+    "@stylistic/eslint-plugin-js": "^3.1.0",
+    "eslint": "^9.20.0",
+    "globals": "^15.14.0",
     "nodemon": "^3.1.9"
   }
 }
